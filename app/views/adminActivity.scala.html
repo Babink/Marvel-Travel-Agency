@@ -1,0 +1,31 @@
+@import helper._
+@import models.Activity.Activities
+
+@(activityForm: Form[Activities] , identifierVal: Int)(implicit request: RequestHeader, messagesProvider:
+MessagesProvider)
+
+@main("Acitivty Page"){
+<h4> Activity add page for admin </h4>
+
+@if(identifierVal == 1){
+<div class="alert alert-success" role="alert">
+    This is a success alert—check it out!
+</div>
+}
+
+@if(identifierVal == 2){
+<div class="alert alert-danger" role="alert">
+    This is a danger alert—check it out!
+</div>
+}
+
+@form(action=adminController.routes.AdminController.activity_post()){
+@inputText(activityForm("title") ,
+'_label -> "Title"
+)
+@inputText(activityForm("image"))
+@inputText(activityForm("overview"))
+
+<input type="submit" value="submit" />
+}
+}

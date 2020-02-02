@@ -6,14 +6,24 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 GET     /activity                   activityController.ActivityController.index
-GET     /type                       typeController.TypesController.index
-GET     /trip                       tripController.TripController.index
+GET     /type                       typeController.TypesController.index(id: Int)
+GET     /trip                       tripController.TripController.index(id: Int)
 GET     /blog                       blogController.BlogController.index
 GET     /contact                    contactController.ContactController.index
 
 # Authentication
 GET     /signup                     authController.AuthController.signup
 GET     /signin                     authController.AuthController.signin
+
+# Admin
+GET     /admin/add/activity          adminController.AdminController.activity
+POST    /admin/add/activity          adminController.AdminController.activity_post
+
+GET     /admin/add/type              adminController.AdminController.types()
+POST    /admin/add/type              adminController.AdminController.types_post
+
+GET     /admin/add/trip              adminController.AdminController.trip
+POST    /admin/add/trip              adminController.AdminController.trip_post
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

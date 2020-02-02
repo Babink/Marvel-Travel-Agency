@@ -1,0 +1,37 @@
+@import helper._
+@import models.Trip.Trips
+
+@(tripForm: Form[Trips] , infoHelper: Int , allTypes: Seq[(String , String)]
+)(implicit request: RequestHeader , messages: MessagesProvider)
+
+@main("Acitivty Page"){
+<h4> Admin trip page </h4>
+@if(infoHelper == 1){
+<div class="alert alert-success" role="alert">
+    successfully inserted types!
+</div>
+}
+
+@if(infoHelper == 2){
+<div class="alert alert-danger" role="alert">
+    error while adding data into database!
+</div>
+}
+
+@form(action=adminController.routes.AdminController.trip_post()){
+@inputText(tripForm("title"))
+@inputText(tripForm("overview"))
+@inputText(tripForm("cost"))
+@inputText(tripForm("no_of_days"), '_label -> "No of Days")
+@select(tripForm("types") , options=allTypes)
+@inputText(tripForm("image_one"))
+@inputText(tripForm("image_two"))
+@inputText(tripForm("image_three"))
+@inputText(tripForm("image_four"))
+@inputText(tripForm("image_five"))
+
+<input type="submit" value="submit" class="btn btn-primary" />
+
+}
+
+}

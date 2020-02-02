@@ -1,0 +1,32 @@
+@import helper._
+@import models.Types.Types
+
+@(typeForm: Form[Types],
+infoHelper: Int,
+activityOptions: Seq[(String , String)]
+)(implicit request: RequestHeader , messages: MessagesProvider)
+
+@main("Acitivty Page"){
+<h4> This will be admin type add page </h4>
+@if(infoHelper == 1){
+<div class="alert alert-success" role="alert">
+    successfully inserted types!
+</div>
+}
+
+@if(infoHelper == 2){
+<div class="alert alert-danger" role="alert">
+    error while adding data into database!
+</div>
+}
+
+@form(action=adminController.routes.AdminController.types_post()){
+@inputText(typeForm("title"))
+@select(typeForm("activity") , options = activityOptions)
+@inputText(typeForm("image_one"))
+@inputText(typeForm("image_two"))
+@inputText(typeForm("overview"))
+
+<input type="submit" value="submit" />
+}
+}

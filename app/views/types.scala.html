@@ -1,5 +1,61 @@
-@()
+@import helper._
+@import models.Types.TypesDB
 
-@main("Types Page"){
-<h3> This will be types page </h3>
+@(activityId: Int , typesItem: Seq[TypesDB])(implicit request: RequestHeader , messages: MessagesProvider)
+
+@main("Acitivty Page"){
+<link rel="stylesheet" type="text/css" href='@routes.Assets.versioned("stylesheets/main.css")'>
+<div class="types">
+    <h3 class="types-title"> Our Trekking Activites </h3>
+    <div class="types-container">
+        @typesItem.map{ items: TypesDB =>
+
+        @if((typesItem.indexOf(items)+1) % 2 == 0){
+        <div class="types-card">
+            <div class="types-card-right">
+                <div class="types-card-img-container">
+                    <div class="types-card-img-container-img-1">
+                        <img class="types-card-img" src="@items.image_one" />
+                    </div>
+                    <div class="types-card-img-container-img-2">
+                        <img class="types-card-img" src="@items.image_two" />
+                    </div>
+                </div>
+
+                <div class="types-card-content-container">
+                    <h4 class="types-card-content-title"> @items.title </h4>
+                    <p class="types-card-content-overview"> @items.overview </p>
+                    <section class="link-arrow"
+                        onclick="location.href='@tripController.routes.TripController.index(items.id)'">
+                        <a> View Details > </a>
+                    </section>
+                </div>
+            </div>
+        </div>
+        }else{
+        <div class="types-card">
+            <div class="types-card-left">
+                <div class="types-card-img-container">
+                    <div class="types-card-img-container-img-1">
+                        <img class="types-card-img" src="@items.image_one" />
+                    </div>
+                    <div class="types-card-img-container-img-2">
+                        <img class="types-card-img" src="@items.image_two" />
+                    </div>
+                </div>
+
+                <div class="types-card-content-container">
+                    <h4 class="types-card-content-title"> @items.title </h4>
+                    <p class="types-card-content-overview"> @items.overview </p>
+                    <section class="link-arrow" style="background-color: chartreuse;"
+                        onclick="location.href='@tripController.routes.TripController.index(items.id)'">
+                        <a style="color: black;"> View Details > </a>
+                    </section>
+                </div>
+            </div>
+        </div>
+        }
+        }
+    </div>
+</div>
 }

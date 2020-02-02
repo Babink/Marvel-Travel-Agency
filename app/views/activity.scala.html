@@ -1,5 +1,50 @@
-@()
+@import helper._
+@import models.Activity.ActivityDB
+
+@(activities: Seq[ActivityDB] , activityLength: Int)(implicit request: RequestHeader , messages: MessagesProvider)
 
 @main("Acitivty Page"){
-<h3> This will be activity page </h3>
+<link rel="stylesheet" type="text/css" href='@routes.Assets.versioned("stylesheets/main.css")'>
+<div class="activity">
+    <div class="activity_start">
+        <h3 class="activity_title"> Our <span style="text-decoration: underline; font-style: italic;">
+                Activities </span> </h3>
+        <div class="activity_container">
+            @activities.map { item: ActivityDB =>
+
+            @if((activities.indexOf(item) + 1) % 2 == 0){
+            <div class="activity_card">
+                <div class="activity_card-right">
+                    <img class="activity_card-image" src="@item.image" />
+
+                    <div class="activity_card-content">
+                        <h3 class="activity_card-content-title"> @item.title </h3>
+                        <p class="activity_card-content-overview"> @item.overview </p>
+                        <section class="link-arrow"
+                            onclick="location.href='@typeController.routes.TypesController.index(item.id)'">
+                            <a> View Details > </a>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            }else{
+            <div class="activity_card">
+                <div class="activity_card-left">
+                    <img class="activity_card-image" src="@item.image" />
+
+                    <div class="activity_card-content">
+                        <h3 class="activity_card-content-title"> @item.title </h3>
+                        <p class="activity_card-content-overview"> @item.overview </p>
+                        <section class="link-arrow"
+                            onclick="location.href='@typeController.routes.TypesController.index(item.id)'">
+                            <a> View Details > </a>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            }
+            }
+        </div>
+    </div>
+</div>
 }

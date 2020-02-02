@@ -1,0 +1,195 @@
+.activity{
+    height: 100%;
+    width: 100%;
+}
+
+.activity_start{
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: 10rem repeat(2,  1fr);
+    grid-template-columns: repeat(2 , 1fr);
+    
+    background-image: linear-gradient(to bottom , rgb(17, 17, 17) , rgb(68, 67, 67) , rgba(170, 169, 169, 0.938));
+}
+
+.activity_title{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: center;
+    color: white;
+    width: 70%;
+    font-size: 50px;
+    height: 80%;
+}
+
+.activity_container{
+    grid-row: 2/-1;
+    grid-column: 1/-1;
+
+    align-self: center;
+    justify-self: center;
+
+    height: 100%;
+    width: 90%;
+}
+
+.activity_card{
+    width: 100%;
+    height: 500px;
+
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+}
+
+.activity_card-left,
+.activity_card-right{
+    height: 90%;
+    width: 80%;
+    justify-self: center;
+    grid-column: 1/-1;
+
+    display: grid;
+    
+    grid-template-columns: 2fr 1fr;
+}
+
+.activity_card-left{
+    justify-self: flex-start;
+}
+
+.activity_card-right{
+    justify-self: flex-end;
+}
+
+/* .hover01 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover01 figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+} */
+
+.activity_card-image{
+    grid-column: 1/2;
+    background-color: teal;
+    width: 80%;
+    height: 97%;
+
+    align-self: center;
+    justify-self: center;
+    background-position: center;
+    background-size: cover;
+
+    -webkit-box-shadow: 17px 20px 0px -1px rgb(197, 194, 194);
+    -moz-box-shadow: 17px 20px 0px -1px rgb(197, 194, 194);
+    box-shadow: 17px 20px 0px -1px rgb(197, 194, 194);
+    filter: grayscale(90%);
+    -webkit-filter: grayscale(90%);
+    transition: filter .4s ease-out;
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
+}
+
+.activity_card-image:hover{
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+	transform: scale(1.05)
+}
+
+.activity_card-content{
+    grid-column: 2/3;
+    color: white;
+}
+
+.activity_card-content-title{
+    align-self: center;
+    font-size: 50px;
+    justify-self: center;
+}
+
+.activity_card-content-overview{
+    font-size: 14px;
+    align-self: center;
+    justify-self: center;
+}
+
+
+section {
+    position: relative;
+    z-index: 1; /* needed for setting pseudo-element z-index */
+    backface-visibility: hidden;
+  }
+  
+  section a {
+    outline: none;
+    color: #404d5b;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  section a::before,
+  section a::after {
+    pointer-events: none;
+    backface-visibility: hidden;
+  }
+
+.link-arrow {
+    color: black;
+    cursor: pointer;
+}
+
+.link-arrow a {
+	padding: 0 0.25em;
+	font-weight: 500;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+
+.link-arrow a:hover,
+.link-arrow a::after {
+	-webkit-transform: translateX(1em);
+	transform: translateX(1em);
+}
+
+.link-arrow a::before,
+.link-arrow a::after {
+	position: absolute;
+	height: 100%;
+	content: '';
+}
+
+.link-arrow a::before {
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	background: #fff;
+}
+
+.link-arrow a::after {
+	left: 100%;
+	z-index: -2;
+	width: 1em;
+	/* background: #34495e url(../img/arrow_right.svg) no-repeat 50% 50%; */
+	background-size: 60% auto;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	pointer-events: auto;
+}
+
+.link-arrow a:hover::after,
+.link-arrow a:focus::after {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
