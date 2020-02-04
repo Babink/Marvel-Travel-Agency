@@ -1,3 +1,16 @@
+@import "./index.css";
 @import "./activity.css";
 @import "./types.css";
-@import "./trip.css"
+@import "./trip.css";
+
+
+.green-button{
+    background-color: #00ffa7;
+    color: black;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+}

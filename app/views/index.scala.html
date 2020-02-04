@@ -1,5 +1,66 @@
+@import helper._
+
 @()
 
 @main("Acitivty Page"){
-<h2> Home page </h2>
+<link rel='stylesheet' type="text/css" href='@routes.Assets.versioned("stylesheets/main.css")'>
+<div class="home-container">
+    <div class="hero-img">
+        <div class="hero-image">
+            <div class="hero-img-info">
+                <h3 class="hero-img-title"> Marvel Nepal </h3>
+                <p class="hero-img-overview"> Brief Overview </p>
+
+                <button class="hero-img-btn"> Check Out </button>
+            </div>
+        </div>
+
+        <div class="hero-search">
+            <div class="hero-search_container">
+                <input type="text" placeholder="Search Destination" class="hero-search-dest" />
+                <input type="number" placeholder="Number of People" class="hero-search-people" />
+                <button class="green-button hero-search-btn"> Search </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-about">
+        <div class="hero-about_item">
+            <div class="hero-about_item-title">
+                Why Marvel Nepal?
+            </div>
+
+            <div class="hero-about_item-1">
+                ITEM-1
+            </div>
+
+            <div class="hero-about_item-2">
+                ITEM-2
+            </div>
+
+            <div class="hero-about_item-3">
+                ITEM-3
+            </div>
+        </div>
+
+        <div class="hero-about_container">
+            About Us
+            <p> Description </p>
+            <button class="green-button" style="background-color: black; color: #00ffa7;"> View More > </button>
+        </div>
+    </div>
+
+    <div class="hero-activity">
+        <h4> Our Activities </h4>
+    </div>
+
+    <div class="hero-top_trek">
+        <h5> Our guest top trek </h5>
+    </div>
+
+    <div class="hero-blog">
+        <h4> Latest Blogs </h4>
+    </div>
+
+</div>
 }

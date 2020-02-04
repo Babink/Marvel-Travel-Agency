@@ -61,7 +61,6 @@
 
 .types-card-img-container-img-1{
     grid-column: 1/2;
-    background-color: darkblue;
     height: 100%;
     width: 92%;
     background-size: cover;
@@ -77,7 +76,6 @@
 
 .types-card-img-container-img-2{
     grid-column: 2/3;
-    background-color: darkgoldenrod;
     height: 100%;
     width: 100%;
     background-size: cover;

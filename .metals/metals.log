@@ -3721,3 +3721,9 @@ WARN  no build target for: C:\Users\dell\Desktop\play\trek-app\trek\app\controll
 WARN  no build target for: C:\Users\dell\Desktop\play\trek-app\trek\app\controllers\TripController.scala
 WARN  no build target for: C:\Users\dell\Desktop\play\trek-app\trek\app\controllers\TripController.scala
 INFO  shutting down Metals
+INFO  started: Metals version 0.8.0 in workspace 'C:\Users\dell\Desktop\play\trek-app\trek'
+INFO  time: initialize in 0.8s
+INFO  skipping build import with status 'Requested'
+INFO  started: Metals version 0.8.0 in workspace 'C:\Users\dell\Desktop\play\trek-app\trek'
+INFO  time: initialize in 1.23s
+INFO  skipping build import with status 'Requested'
